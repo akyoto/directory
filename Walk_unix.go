@@ -54,7 +54,7 @@ func Walk(directory string, callBack func(string)) {
 
 				sliceHeader := reflect.SliceHeader{
 					Len:  i,
-					Cap:  len(dirent.Name),
+					Cap:  cap(dirent.Name),
 					Data: uintptr(unsafe.Pointer(&dirent.Name[0])),
 				}
 
